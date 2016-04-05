@@ -1,7 +1,7 @@
 var tweetApp = angular.module('tweetApp', ['ngRoute']);
 tweetApp.controller('mainController', function($scope, $http, $routeParams, $interval){
 
-	var url = 'http://www.digitalcrafts.com/students/twitter/hashtag.php?hash=wtf'
+	var url = 'http://www.digitalcrafts.com/students/twitter/hashtag.php?hash=ReasonsHumansWillGoExtinct'
 	// &secondHash=
 
 	$http.get(url).success(function(data){

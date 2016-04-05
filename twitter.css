@@ -1,11 +1,16 @@
+.container{
+	padding-top: 1%;
+}
 .tweets{
 	border: 1px solid red;
 	font-size: 20px;
 	padding-bottom: 1%;
 	padding-top: 1%;
+	margin-bottom: 1%;
+	background: white;
 }
-img{
-	width: 100%;
+body{
+	background: url('twitter3.jpg');
 }
 .profilePic{
 	width: 48px;
@@ -13,7 +18,26 @@ img{
 }
 .retweet{
 	color: #0066ff;
+	font-size: 14px;
+}
+.retweet img{
+	width: 28px;
+	height: 28px;
 }
 .followers{
-
+	font-size: 14px;
+	float: right;
+	color: #0066ff;
+}
+.aboutMe{
+	font-size: 12px;
+	color: #ff884d;
+}
+.location{
+	font-size: 14px;
+	float: right;
+	color: #d7d7c1;
+}
+.at{
+	font-size: 12px;
 }
