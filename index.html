@@ -12,7 +12,7 @@
 
 	<div class="container">
 		<div class="row">
-			<div class="col-sm-6 col-md-offset-2 tweets" ng-repeat='tweet in data'>
+			<div class="col-sm-6 col-md-offset-3 tweets" ng-repeat='tweet in data'>
 				<img ng-src='{{tweet.user.profile_image_url}}' class="profilePic"> {{tweet.user.name}} <span class="at">@{{tweet.user.screen_name}}</span> <span class='location'> I'm in {{tweet.user.location}}</span><br>
 			{{tweet.text}} -- {{tweet.sinceTweeted}} seconds ago<br>
 			<!-- <img ng-src="{{tweet.user.profile_banner_url}}"> -->
