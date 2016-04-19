@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app='tweetApp'>
+<head>
+	<title>Twitter Feed</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="twitter.css">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+	<script type="text/javascript" src="https://code.angularjs.org/1.5.3/angular-route.min.js"></script>
+	<script type="text/javascript" src="test.js"></script>
+</head>
+<body ng-controller='mainController'>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6 col-md-offset-3 tweets" ng-repeat='tweet in data' tweet-data>
+			<!-- 
+				<img ng-src='{{tweet.user.profile_image_url}}' class="profilePic"> {{tweet.user.name}} <span class="at">@{{tweet.user.screen_name}}</span> <span class='location'> I'm in {{tweet.user.location}}</span><br>
+			{{tweet.text}} -- {{tweet.sinceTweeted}} seconds ago<br> -->
+			<!-- <img ng-src="{{tweet.user.profile_banner_url}}"> -->
+			<!-- <span class="retweet"><img src="retweet.png"> {{tweet.retweet_count}} times</span> <span class='followers'>Followers - {{tweet.user.followers_count}}</span> -->
+
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
