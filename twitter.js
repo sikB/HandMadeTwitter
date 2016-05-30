@@ -1,7 +1,7 @@
 var tweetApp = angular.module('tweetApp', ['ngRoute']);
 tweetApp.controller('mainController', function($scope, $http, $routeParams, $interval){
 
-	var url = 'http://www.digitalcrafts.com/students/twitter/hashtag.php?hash=ReasonsHumansWillGoExtinct'
+	var url = 'http://www.digitalcrafts.com/students/twitter/hashtag.php?hash=Trump2016'
 	// &secondHash=
 
 	$http.get(url).success(function(data){
@@ -14,25 +14,16 @@ tweetApp.controller('mainController', function($scope, $http, $routeParams, $int
 			$interval(function(){
 				for(i=0; i<$scope.data.length; i++){
 					var currentDate = new Date();
-					var currentTimeInSec = currentDate.getTime()/1000;
-					$scope.data[i].sinceTweeted = Math.floor(currentTimeInSec - $scope.data[i].tweetSeconds);
+					var currentTimeInMilliSec = currentDate.getTime()/1;
+					$scope.data[i].sinceTweeted = Math.floor(currentTimeInMilliSec - $scope.data[i].tweetSeconds);
 					// this should be a function
 					var timeInSec = $scope.data[i].sinceTweeted;
-					if(timeInSec < 0){
-						timeInSec = 0;
-					}if(timeInSec  < 60){
-						timeInSec + 's ago';
-					}else if(timeInSec < 10 * 60){
-						var m = Math.floor(timeInSec / 60),
-						s = timeInSec - m * 60;
-						 m + 'm' + (s === 0 ? '' : ' ' + s + 's') + 'ago';
-					}else if (timeInSec < 60 * 60){
-						 (Math.floor(timeInSec/60)) + 'm ago';
-					}else if(timeInSec < 60 * 60 * 24){
-						(Math>floor(timeInSec/60/60)) + 'h ago';
-					} (Math.floor(timeInSec/60/60/24)) + 'd ago';
+					console.log(timeInSec);
+					var rightNow = +new Date();
+					var sinceTweeted = rightNow - timeInSec;
+					$scope.dateValue = new Date(sinceTweeted);
+					// console.log(sinceTweeted);
 				}   
-				// console.log(timeInSec);
 			},1000);
 		}
 	})
