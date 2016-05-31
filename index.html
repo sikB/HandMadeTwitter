@@ -14,11 +14,17 @@
 		<div class="row">
 			<div class="col-sm-6 col-md-offset-3 tweets" ng-repeat='tweet in data'>
 				<img ng-src='{{tweet.user.profile_image_url}}' class="profilePic"> {{tweet.user.name}} <span class="at">@{{tweet.user.screen_name}}</span> <span class='location'> I'm in {{tweet.user.location}}</span><br>
-			{{tweet.text}} - {{tweet.sinceTweeted | date:"h"}}hrs {{tweet.sinceTweeted | date:"mm"}}mins
-			{{tweet.sinceTweeted | date:"s"}}sec ago<br>
-			<!-- <img ng-src="{{tweet.user.profile_banner_url}}"> -->
+			{{tweet.text}}
+			<div class="text-center time"> Tweeted {{tweet.sinceTweeted | date:"h"}}hrs {{tweet.sinceTweeted | date:"mm"}}mins
+				{{tweet.sinceTweeted | date:"ss"}}sec ago
 			<span class="retweet"><img src="retweet.png"> {{tweet.retweet_count}} times</span> <span class='followers'>Followers - {{tweet.user.followers_count}}</span>
+			</div>
 
+			</div>
+			<div class="hashInput col-sm-3">
+				<form class="hashForm" ng-submit='enterHash()'>
+					<input type="hashInput" type="text" name="userInput" placeholder="Justin Bieber" ng-model=userInputHash>
+				</form>
 			</div>
 		</div>
 	</div>
